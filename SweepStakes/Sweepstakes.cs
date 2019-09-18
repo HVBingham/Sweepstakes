@@ -8,8 +8,9 @@ namespace Sweepstakes {
     public class Sweepstakes 
     {
         string name;
-        List<Contestants> contestants;
-        int maxContestants;
+        Dictionary<int, Contestants> contestantsList;
+        public int contestantCounter = 0;
+        public int maxContestants;
         public string Name
         {
             get
@@ -39,25 +40,29 @@ namespace Sweepstakes {
         {
             this.name = name;
             this.maxContestants = maxContestants;
-            contestants = new List<Contestants>();
+            contestantsList = new Dictionary<int, Contestants>();
 
         }
         
 
-        public void RegisterContestant(Contestants contestant)
+        public void RegisterContestant(Contestants contestants)
         {
-            UserInterface.GetContestantInfo(contestant);
-            contestant.RegistrationNumber = GenterateRegistrationNumber();
+            if (contestantCounter < maxContestants)
+            {
+                contestants = new Contestants();
+                contestants.GetInfo(contestants);
+                contestantCounter++;
+                contestants.RegistrationNumber = contestantCounter;
+                contestantsList.Add(contestantCounter, contestants);
 
-
+            }
+            else
+            {
+                UserInterface.MaxAmountReached();
+            }
         }
         
-        private int GenterateRegistrationNumber()
-        {
-            Random rnd = new Random();
-           int number= rnd.Next(1, maxContestants);
-            return number;
-        }
+    
 
         public Contestants PickWinner()
         {

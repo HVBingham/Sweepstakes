@@ -78,6 +78,11 @@ namespace Sweepstakes
             }
 
         }
+        public void GetInfo(Contestants contestants)
+        {
+            UserInterface.GetContestantInfo(contestants);
+            
+        }
        
       
 

@@ -30,7 +30,10 @@ namespace Sweepstakes
         }
 
 
-
+        public static void MaxAmountReached()
+        {
+            Console.WriteLine("The Sweepstakes is full. Please Try again next time");
+        }
 
     }
 }
