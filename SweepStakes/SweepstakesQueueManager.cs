@@ -8,5 +8,9 @@ namespace Sweepstakes
 {
     class SweepstakesQueueManager:ISweepstakesManager 
     {
+
+
+
+
     }
 }

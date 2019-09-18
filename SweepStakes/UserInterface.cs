@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    static class UserInterface
+    public static class UserInterface
     {
-
-
+        public static void GetInfo(string message)
+        {
+            Console.WriteLine(message);
+        }
 
 
     }
