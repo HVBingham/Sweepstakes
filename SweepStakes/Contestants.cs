@@ -11,11 +11,10 @@ namespace Sweepstakes
         string firstName;
         string lastName;
         string email;
-        string address;
         int registrationNumber;
         public Contestants()
         {
-
+            
         }
         public string FirstName
         {
@@ -54,18 +53,7 @@ namespace Sweepstakes
             }
          
         }
-        public string Address
-        {
-            get
-            {
-                return address;
-            }
-            set
-            {
-                address = value;
-            }
-         
-        }
+    
         public int RegistrationNumber
         {
             get
@@ -76,12 +64,6 @@ namespace Sweepstakes
             {
                 registrationNumber = value;
             }
-
-        }
-        public void GetInfo(Contestants contestants)
-        {
-            UserInterface.GetContestantInfo(contestants);
-            
         }
        
       

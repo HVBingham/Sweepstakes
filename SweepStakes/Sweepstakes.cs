@@ -41,6 +41,7 @@ namespace Sweepstakes {
             this.name = name;
             this.maxContestants = maxContestants;
             contestantsList = new Dictionary<int, Contestants>();
+          
 
         }
         
@@ -49,10 +50,9 @@ namespace Sweepstakes {
         {
             if (contestantCounter < maxContestants)
             {
-                contestants = new Contestants();
-                contestants.GetInfo(contestants);
+                contestants = new Contestants(); 
                 contestantCounter++;
-                contestants.RegistrationNumber = contestantCounter;
+                contestants.RegistrationNumber = contestantCounter ;
                 contestantsList.Add(contestantCounter, contestants);
 
             }
@@ -61,12 +61,23 @@ namespace Sweepstakes {
                 UserInterface.MaxAmountReached();
             }
         }
+
         
     
 
         public Contestants PickWinner()
         {
-
+            int winningNumber;
+            Random rnd = new Random();
+            winningNumber = rnd.Next(1, contestantCounter);
+            foreach(KeyValuePair<int,Contestants> pair in contestantsList)
+            {
+                if (winningNumber == pair.Key)
+                {
+                    return pair.Value;
+                }
+            }
+            
 
         }
         public void PrintContestantInfo(Contestants contestant)

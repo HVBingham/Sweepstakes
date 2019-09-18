@@ -16,8 +16,7 @@ namespace Sweepstakes
             contestants.LastName = Console.ReadLine();
             Console.WriteLine("Please Enter Email: ");
             contestants.Email = Console.ReadLine();
-            Console.WriteLine("Please Enter Address: ");
-            contestants.Address = Console.ReadLine();
+
         }
         public static void SweepstakesName()
         {
