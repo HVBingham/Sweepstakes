@@ -7,17 +7,9 @@ using System.Threading.Tasks;
 namespace Sweepstakes
 {
     public interface ISweepstakesManager
-    {
-
-       
-
-
+    { 
         void InsertSweepstakes(Sweepstakes sweepStakes);
-
         Sweepstakes GetSweepstakes();
-        
-
-
-
+       
     }
 }

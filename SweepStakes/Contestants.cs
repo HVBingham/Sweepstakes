@@ -8,16 +8,15 @@ namespace Sweepstakes
 {
    public class Contestants
     {
-       public string firstName;
-       public string lastName;
-       public string email;
-       public int registrationNumber;
+        public string firstName;
+        public string lastName;
+        public string email;
+        public int registrationNumber;
         public Contestants()
         {
-            
-        }
 
-      public void GetContestantsInfo()
+        }
+        public void GetContestantsInfo()
         {
             UserInterface.GetContestantInfo("Please enter frist name:");
             firstName = Console.ReadLine();
@@ -26,10 +25,5 @@ namespace Sweepstakes
             UserInterface.GetContestantInfo("Please enter email: ");
             email = Console.ReadLine();
         }
-
-        
-
-
-
-    }
+   }
 }

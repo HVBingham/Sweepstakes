@@ -9,7 +9,7 @@ namespace Sweepstakes {
     {
         string name;
         Dictionary<int, Contestants> contestantsList;
-        public int contestantCounter = 0;
+        public int contestantCounter;
         public int maxContestants;
         Contestants winner;
         public string Name
@@ -39,6 +39,7 @@ namespace Sweepstakes {
             this.name = name;
             this.maxContestants = maxContestants;
             contestantsList = new Dictionary<int, Contestants>();
+            contestantCounter = 0;
         }
         public void RegisterContestant(Contestants contestants)
         {
@@ -47,30 +48,17 @@ namespace Sweepstakes {
                 contestants = new Contestants();
                 contestants.GetContestantsInfo();
                 contestantCounter++;
-                contestants.registrationNumber=
+                contestants.registrationNumber = contestantCounter;
                 contestantsList.Add(contestantCounter, contestants);
+
             }
             else
             {
                 UserInterface.MaxAmountReached();
             }
         }
-        private int Randomize(int min, int max)
-        {
-            Random rnd = new Random();
-            int number = rnd.Next(min, max);
-            return number;
-
-        }
-        public int CreateRegistrationNumber()
-        {
-
-            int randomID;
-            int maxRandom = maxContestants * 3;
-            randomID = Randomize(maxContestants, maxRandom);
-            for
-
-        }
+ 
+        
         public Contestants PickWinner()
         {
             int winningNumber;
