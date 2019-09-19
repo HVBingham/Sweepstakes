@@ -27,6 +27,10 @@ namespace Sweepstakes
         {
             Console.WriteLine("The Sweepstakes is full. Please Try again next time");
         }
+        public static void  AskQuestion(string message)
+        {
+            Console.WriteLine(message);
+        }
 
     }
 }
