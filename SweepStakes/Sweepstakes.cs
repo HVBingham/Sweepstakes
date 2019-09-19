@@ -11,6 +11,8 @@ namespace Sweepstakes {
         Dictionary<int, Contestants> contestantsList;
         public int contestantCounter = 0;
         public int maxContestants;
+        Contestants winner;
+   
         public string Name
         {
             get
@@ -68,20 +70,32 @@ namespace Sweepstakes {
         public Contestants PickWinner()
         {
             int winningNumber;
-            Random rnd = new Random();
-            winningNumber = rnd.Next(1, contestantCounter);
-            foreach(KeyValuePair<int,Contestants> pair in contestantsList)
+            winningNumber=RandomizeWinner();
+            foreach (KeyValuePair<int, Contestants> pair in contestantsList)
             {
                 if (winningNumber == pair.Key)
                 {
-                    return pair.Value;
+                   winner= pair.Value;
+
                 }
             }
-            
+            return winner;
+
+
 
         }
+        public int RandomizeWinner()
+        {
+            int chosen;
+            Random rnd = new Random();
+            chosen = rnd.Next(1, contestantCounter);
+            return chosen;
+
+        }
+      
         public void PrintContestantInfo(Contestants contestant)
         {
+
 
         }
     }

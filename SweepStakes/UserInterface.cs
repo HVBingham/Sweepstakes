@@ -8,15 +8,9 @@ namespace Sweepstakes
 {
     public static class UserInterface
     {
-        public static void GetContestantInfo(Contestants contestants)
+        public static void GetContestantInfo(string message)
         {
-            Console.WriteLine("Please Enter First Name: ");
-            contestants.FirstName = Console.ReadLine();
-            Console.WriteLine("Please Enter Last Name: ");
-            contestants.LastName = Console.ReadLine();
-            Console.WriteLine("Please Enter Email: ");
-            contestants.Email = Console.ReadLine();
-
+            Console.WriteLine(message);
         }
         public static void SweepstakesName()
         {

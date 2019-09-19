@@ -66,7 +66,15 @@ namespace Sweepstakes
             }
         }
        
-      
+      public void GetContestantsInfo()
+        {
+            UserInterface.GetContestantInfo("Please enter frist name:");
+            FirstName = Console.ReadLine();
+            UserInterface.GetContestantInfo("Please enter last name:");
+            LastName = Console.ReadLine();
+            UserInterface.GetContestantInfo("Please enter email: ");
+            Email = Console.ReadLine();
+        }
 
         
 
